@@ -10,12 +10,12 @@
 # (C) 2010 Taodyne SAS
 # ******************************************************************************
 
+MODINSTDIR = lorem_ipsum
 
 include(../modules.pri)
-
-TARGET   = lorem_ipsum
-VERSION  = "1.0.0"
 
 HEADERS     = lorem_ipsum.h
 SOURCES     = lorem_ipsum.cpp
 TBL_SOURCES = lorem_ipsum.tbl
+
+INSTALLS += thismod_icon
