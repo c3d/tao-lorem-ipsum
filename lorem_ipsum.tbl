@@ -1,0 +1,7 @@
+// Definition of the interface between XLR and native code
+// for the "lorem ipsum" module.
+
+#include "lorem_ipsum.h"
+
+PREFIX(lorem_ipsum, tree, "m_lorem_ipsum", PARM(w,integer), return lorem_ipsum(self,w),"");
+
