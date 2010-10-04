@@ -1,20 +1,23 @@
 // Implementation of the lorem ipsum primitive
 
 #include "lorem_ipsum.h"
+#include "main.h"
+#include "runtime.h"
 #include <iostream>
 #include <sstream>
 #include <algorithm>
 #include <iterator>
 
-XL::Text_p lorem_ipsum(Tree_p self, Integer_p nwords)
+using namespace XL;
+
+
+std::string _lorem_ipsum(longlong nwords, int offset)
 // ----------------------------------------------------------------------------
 //    Generate arbitrary length dummy text based on the well-known sequence
 // ----------------------------------------------------------------------------
 {
-    (void*)self;
-
     if (!nwords)
-        return new XL::Text("");
+        return "";
 
     static struct LoremWords {
         LoremWords()
@@ -36,8 +39,8 @@ XL::Text_p lorem_ipsum(Tree_p self, Integer_p nwords)
         std::vector<std::string> words;
     } lorem;
 
-    std::string ret = lorem.words[0];
     int size = lorem.words.size();
+    std::string ret = lorem.words[offset % size];
     for (int i = 1; i < nwords; i++)
         ret += " " + lorem.words[i % size];
 
@@ -47,6 +50,50 @@ XL::Text_p lorem_ipsum(Tree_p self, Integer_p nwords)
     else if (*i != '.')
         *i = '.';
 
-    return new XL::Text(ret);
+    return ret;
 }
 
+
+Text_p lorem_ipsum(Tree_p /* self */, Integer_p nwords)
+// ----------------------------------------------------------------------------
+//    Generate arbitrary length dummy text based on the well-known sequence
+// ----------------------------------------------------------------------------
+{
+    if (!nwords || !nwords->value)
+        return new Text("");
+    return new Text(_lorem_ipsum(nwords->value, 0));
+}
+
+
+Text_p lorem_ipsum(Tree_p self, Integer_p nwords, Integer_p npara)
+// ----------------------------------------------------------------------------
+//    Generate words in paragraphs of similar size (separated with "\n\n")
+// ----------------------------------------------------------------------------
+{
+    (void*)self;
+
+    if (!nwords || !nwords->value || !npara || !npara->value)
+        return new Text("");
+
+    std::string ret;
+    longlong nw = nwords->value, np = npara->value;
+
+    longlong count = 0;
+    longlong wpp = nw/np;
+    if (wpp == 0)
+        wpp = 1;
+
+    std::string t;
+    for (int i = 0 ; i < np - 1; i++)
+    {
+        t = _lorem_ipsum(wpp, count);
+        std::transform(t.begin(), t.begin() + 1, t.begin(), toupper);
+        ret += t + "\n\n";
+        count += wpp;
+    }
+    t = _lorem_ipsum(nw - count, count);
+    std::transform(t.begin(), t.begin() + 1, t.begin(), toupper);
+    ret += t;
+
+    return new Text(ret);
+}

@@ -3,5 +3,5 @@
 
 #include "lorem_ipsum.h"
 
-PREFIX(lorem_ipsum, tree, "m_lorem_ipsum", PARM(w,integer), return lorem_ipsum(self,w),"");
-
+PREFIX(m_lorem_ipsum_w,  tree, "m_lorem_ipsum", PARM(w,integer),                 return lorem_ipsum(self,w),"");
+PREFIX(m_lorem_ipsum_wp, tree, "m_lorem_ipsum", PARM(w,integer) PARM(p,integer), return lorem_ipsum(self,w,p),"");

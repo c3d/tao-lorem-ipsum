@@ -3,6 +3,8 @@
 
 #include "tree.h"
 
-using namespace XL;
+XL::Text_p lorem_ipsum(XL::Tree_p self, XL::Integer_p nwords);
+XL::Text_p lorem_ipsum(XL::Tree_p self, XL::Integer_p nwords, XL::Integer_p npara);
 
-Text_p lorem_ipsum(Tree_p self, Integer_p nwords);
+// Private
+std::string _lorem_ipsum(longlong nwords, int offset = 0);
