@@ -3,6 +3,8 @@
 #include "lorem_ipsum.h"
 #include "main.h"
 #include "runtime.h"
+#include "base.h"
+
 #include <iostream>
 #include <sstream>
 #include <algorithm>
@@ -10,6 +12,8 @@
 
 using namespace XL;
 
+
+XL_DEFINE_TRACES
 
 std::string _lorem_ipsum(longlong nwords, int offset)
 // ----------------------------------------------------------------------------
@@ -61,22 +65,28 @@ Text_p lorem_ipsum(Tree_p /* self */, Integer_p nwords)
 {
     if (!nwords || !nwords->value)
         return new Text("");
+
+    IFTRACE(lorem)
+        std::cerr << "Lorem Ipsum: " << nwords->value << " words\n";
+
     return new Text(_lorem_ipsum(nwords->value, 0));
 }
 
 
-Text_p lorem_ipsum(Tree_p self, Integer_p nwords, Integer_p npara)
+Text_p lorem_ipsum(Tree_p /* self */, Integer_p nwords, Integer_p npara)
 // ----------------------------------------------------------------------------
 //    Generate words in paragraphs of similar size (separated with "\n\n")
 // ----------------------------------------------------------------------------
 {
-    (void*)self;
-
     if (!nwords || !nwords->value || !npara || !npara->value)
         return new Text("");
 
     std::string ret;
     longlong nw = nwords->value, np = npara->value;
+
+    IFTRACE(lorem)
+        std::cerr << "Lorem Ipsum: " << nw << " words, "
+                                     << np << " paragraphs\n";
 
     longlong count = 0;
     longlong wpp = nw/np;
