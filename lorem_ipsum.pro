@@ -17,6 +17,6 @@ include(../modules.pri)
 HEADERS     = lorem_ipsum.h
 SOURCES     = lorem_ipsum.cpp
 TBL_SOURCES = lorem_ipsum.tbl
-OTHER_FILES = module.xl lorem_ipsum.tbl traces.tbl
+OTHER_FILES = lorem_ipsum.tbl module.xl
 
 INSTALLS += thismod_icon
