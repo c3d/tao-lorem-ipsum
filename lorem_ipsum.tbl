@@ -3,24 +3,17 @@
 
 #include "lorem_ipsum.h"
 
-PREFIX(lorem_ipsum_w,  tree, "lorem_ipsum", PARM(w,integer), return lorem_ipsum(self,w),
-       "/*| docname \"lorem_ipsum\", \"text:debug\", do { \
-                dsyntax <<lorem_ipsum w>>;\
-                synopsis \"Produce text\" ; \
-                description <<Generate arbitrary length dummy text based on the well-known sequence>> ;\
-                parameters;\
-                parameter \"integer\", \"w\", <<The number of words to insert>>;\
-                return_value \"text\", <<A dummy text with the required number of words>>;\
-                }\
-          |*/");
-PREFIX(lorem_ipsum_wp, tree, "lorem_ipsum", PARM(w,integer) PARM(p,integer), return lorem_ipsum(self,w,p),
-       "/*| docname \"lorem_ipsum\", \"text:debug\", do { \
-                dsyntax <<lorem_ipsum w p>>;\
-                synopsis \"Produce text\" ; \
-                description <<Generate arbitrary length dummy text based on the well-known sequence>> ;\
-                parameters;\
-                parameter \"integer\", \"w\", <<The total number of words to insert>>;\
-                parameter \"integer\", \"p\", <<The number of paragraphs>>;\
-                return_value \"text\", <<A dummy text with the required number of words and paragraphs>>;\
-                }\
-          |*/");
+PREFIX(lorem_ipsum_w,  tree, "lorem_ipsum",
+    PARM(w, integer, "The number of words to insert"),
+    return lorem_ipsum(self,w),
+    DOC_GROUP(text:debug), DOC_SYNOPSIS("Produce text"),
+    DOC_DESCRIPTION("Generate arbitrary length dummy text based on the well-known sequence"),
+    DOC_RET(tree, "A dummy text with the required number of words"), );
+
+PREFIX(lorem_ipsum_wp, tree, "lorem_ipsum",
+    PARM(w,integer, "The total number of words to insert")
+    PARM(p,integer, "The number of paragraphs"),
+    return lorem_ipsum(self,w,p),
+    DOC_GROUP(text:debug), DOC_SYNOPSIS("Produce text"),
+    DOC_DESCRIPTION("Generate arbitrary length dummy text based on the well-known sequence"),
+    DOC_RET(tree, "A dummy text with the required number of words and paragraphs"), );
