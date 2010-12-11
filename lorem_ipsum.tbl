@@ -4,16 +4,23 @@
 #include "lorem_ipsum.h"
 
 PREFIX(lorem_ipsum_w,  tree, "lorem_ipsum",
-    PARM(w, integer, "The number of words to insert"),
-    return lorem_ipsum(self,w),
-    DOC_GROUP(text:debug), DOC_SYNOPSIS("Produce text"),
-    DOC_DESCRIPTION("Generate arbitrary length dummy text based on the well-known sequence"),
-    DOC_RET(tree, "A dummy text with the required number of words"), );
+       PARM(words, integer, "Number of words"),
+       return lorem_ipsum(self,words),
+       GROUP(text:debug)
+       SYNOPSIS("Produce random words in pseudo-latin")
+       DESCRIPTION("Generate random words in pseudo-latin. "
+                   "The text contains an arbitrary number of words, "
+                   "specified by the argument to the function.")
+       RETURNS(tree, "A text with the required number of words"))
 
 PREFIX(lorem_ipsum_wp, tree, "lorem_ipsum",
-    PARM(w,integer, "The total number of words to insert")
-    PARM(p,integer, "The number of paragraphs"),
-    return lorem_ipsum(self,w,p),
-    DOC_GROUP(text:debug), DOC_SYNOPSIS("Produce text"),
-    DOC_DESCRIPTION("Generate arbitrary length dummy text based on the well-known sequence"),
-    DOC_RET(tree, "A dummy text with the required number of words and paragraphs"), );
+       PARM(w,integer, "Number of words")
+       PARM(p,integer, "Number of paragraphs"),
+       return lorem_ipsum(self,w,p),
+       GROUP(text:debug)
+       SYNOPSIS("Produce random paragraphs in pseudo-latin")
+       DESCRIPTION("Generate random paragraphs of text in pseudo-latin. "
+                   "The text contains an arbitrary number of paragraphs "
+                   "and an arbitrary number of words, specified by the "
+                   "arguments to the function")
+       RETURNS(tree, "A text with the required number of words and paragraphs"))
