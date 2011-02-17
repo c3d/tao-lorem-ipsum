@@ -28,23 +28,21 @@
 PREFIX(lorem_ipsum_w,  tree, "lorem_ipsum",
        PARM(words, integer, "Number of words"),
        return lorem_ipsum(self,words),
-       GROUP(module.LoremIpsum)
-       SYNOPSIS("Produce a sequence of words in pseudo-latin")
-       DESCRIPTION("Produce a sequence of words in pseudo-latin. "
+       GROUP(text:debug)
+       SYNOPSIS("Produce random words in pseudo-latin")
+       DESCRIPTION("Generate random words in pseudo-latin. "
                    "The text contains an arbitrary number of words, "
-                   "specified by @a words.")
-       RETURNS(tree, "A text with the required number of words."))
+                   "specified by the argument to the function.")
+       RETURNS(tree, "A text with the required number of words"))
 
 PREFIX(lorem_ipsum_wp, tree, "lorem_ipsum",
-       PARM(words,integer, "Number of words")
-       PARM(para,integer, "Number of paragraphs"),
-       return lorem_ipsum(self,words,para),
-       GROUP(module.LoremIpsum)
-       SYNOPSIS("Produce a sequence of paragraphs in pseudo-latin")
-       DESCRIPTION("Produce a sequence of paragraphs in pseudo-latin."
-                   "@a words is the total number of words. The text is split "
-                   "in @a para paragraphs of approximately the same length. "
-                   "Paragraphs are separated by two consecutive carriage "
-                   "returns.")
-       RETURNS(tree, "A text with the required number of words and "
-                     "paragraphs."))
+       PARM(w,integer, "Number of words")
+       PARM(p,integer, "Number of paragraphs"),
+       return lorem_ipsum(self,w,p),
+       GROUP(text:debug)
+       SYNOPSIS("Produce random paragraphs in pseudo-latin")
+       DESCRIPTION("Generate random paragraphs of text in pseudo-latin. "
+                   "The text contains an arbitrary number of paragraphs "
+                   "and an arbitrary number of words, specified by the "
+                   "arguments to the function")
+       RETURNS(tree, "A text with the required number of words and paragraphs"))
