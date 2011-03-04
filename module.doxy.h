@@ -30,13 +30,13 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.
  *
  * Here is an example:
  *
-@verbatim
+@code
 import LoremIpsum "0.1"
 
 writeln lorem_ipsum 30
 writeln "----"
 writeln lorem_ipsum 30, 3
-@endverbatim
+@endcode
  *
  * The above code generates the following output:
  *
