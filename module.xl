@@ -1,12 +1,7 @@
-// LoremIpsum module definition
-//
-// This module defines commands to generate the Lorem ipsum sequence.
-//
-// Copyright 20010-2011 Taodyne
+// Module definition file 
 
 module_description
-    id "2EBE7E14-F098-4A84-BB13-75F0EFCE311B"
-    name "Lorem Ipsum"
-    import_name "LoremIpsum"
-    description "Adds a XL primitive to return text based on the well-known Lorem ipsum sequence."
-    version "0.1"
+	id "2EBE7E14-F098-4A84-BB13-75F0EFCE311B"
+	name "Lorem Ipsum"
+	description "Adds a XL primitive to return text based on the well-known Lorem ipsum sequence."
+
