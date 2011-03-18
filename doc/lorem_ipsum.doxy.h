@@ -1,3 +1,7 @@
+/*
+ * This file duplicates module.xl and lorem_ipsum.tbl for documentation purposes.
+ */
+
 /**
  * @addtogroup LoremIpsum Lorem Ipsum
  * @ingroup Modules
@@ -27,7 +31,7 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.
  * Here is an example:
  *
 @code
-import LoremIpsum 1.0
+import LoremIpsum "0.1"
 
 writeln lorem_ipsum 30
 writeln "----"
