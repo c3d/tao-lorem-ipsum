@@ -9,4 +9,4 @@ module_description
     name "Lorem Ipsum"
     import_name "LoremIpsum"
     description "Adds a XL primitive to return text based on the well-known Lorem ipsum sequence."
-    version "0.1"
+    version "1.0"
