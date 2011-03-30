@@ -31,7 +31,7 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.
  * Here is an example:
  *
 @code
-import LoremIpsum "1.0"
+import LoremIpsum 1.0
 
 writeln lorem_ipsum 30
 writeln "----"
