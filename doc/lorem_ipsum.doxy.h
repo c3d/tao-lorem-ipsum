@@ -1,3 +1,7 @@
+/*
+ * This file duplicates module.xl and lorem_ipsum.tbl for documentation purposes.
+ */
+
 /**
  * @addtogroup LoremIpsum Lorem Ipsum
  * @ingroup Modules
