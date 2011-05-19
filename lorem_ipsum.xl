@@ -12,3 +12,6 @@ module_description
     author "Taodyne SAS"
     website "http://www.taodyne.com"
     version 1.0
+
+module_description "fr",
+    description "Fournit une primitive qui crée un texte de remplissage basé sur la célèbre séquence ""Lorem ipsum""."
