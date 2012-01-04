@@ -1,6 +1,5 @@
 /**
- * @addtogroup LoremIpsum Lorem Ipsum
- * @ingroup Modules
+ * @taomoduledescription{LoremIpsum, Lorem Ipsum}
  *
  * The LoremIpsum module can be used to generate filler text when you need
  * to work on the layout of a document.
@@ -49,6 +48,7 @@ Consectetur ipsum dolor sit amet.
 Eiusmod ipsum dolor sit amet, consectetur adipisicing.
 @endverbatim
  *
+ * @endtaomoduledescription{LoremIpsum}
  * @{
  */
 
