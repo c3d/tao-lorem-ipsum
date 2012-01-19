@@ -20,7 +20,7 @@
  *
  * Le texte n'a aucune signification, de sorte que le lecteur n'est pas
  * distrait pas le contenu lorsqu'il observe la mise en page. Le document
- * ressemble pourtant à un document normal en française car la répartition
+ * ressemble pourtant à un document normal en langue française car la répartition
  * des lettres de Lorem Ipsum est proche du langage naturel.
  *
  * Le texte généré a une longueur arbitraire. La fonction @ref lorem_ipsum
