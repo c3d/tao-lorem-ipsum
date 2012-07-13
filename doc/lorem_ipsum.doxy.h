@@ -45,7 +45,7 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.
  *
  * @~
 @code
-import LoremIpsum 1.0
+import LoremIpsum
 
 writeln lorem_ipsum 30
 writeln "----"
