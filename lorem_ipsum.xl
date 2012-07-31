@@ -11,7 +11,7 @@ module_description
     description "Adds a XL primitive to return text based on the well-known Lorem ipsum sequence."
     author "Taodyne SAS"
     website "http://www.taodyne.com"
-    version 1.001
+    version 1.002
 
 module_description "fr",
     description "Fournit une primitive qui crée un texte de remplissage basé sur la célèbre séquence ""Lorem ipsum""."
