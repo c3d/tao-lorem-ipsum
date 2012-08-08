@@ -23,6 +23,8 @@
 //  (C) 2010 Taodyne SAS
 // ****************************************************************************
 
+#include "lorem_ipsum.h"
+
 PREFIX(lorem_ipsum_w,  tree, "lorem_ipsum",
        PARM(words, integer, "Number of words"),
        return lorem_ipsum(self,words),
