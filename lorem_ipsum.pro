@@ -19,7 +19,7 @@ SOURCES     = lorem_ipsum.cpp
 TBL_SOURCES = lorem_ipsum.tbl
 OTHER_FILES = lorem_ipsum.xl lorem_ipsum.tbl traces.tbl
 
-INSTALLS += thismod_icon
+INSTALLS += thismod_icon 
 
 QMAKE_SUBSTITUTES = doc/Doxyfile.in
 DOXYFILE = doc/Doxyfile
