@@ -1,8 +1,8 @@
 /**
- * @~english
  * @taomoduledescription{LoremIpsum, Lorem Ipsum}
- * <tt>import LoremIpsum</tt> - Generate dummy text.@n
  *
+ * @~english
+ * <tt>import LoremIpsum</tt> - Generate dummy text.
  * The LoremIpsum module can be used to generate filler text when you need
  * to work on the layout of a document.
  *
@@ -16,9 +16,7 @@
  * 69 words and is as follows:
  *
  * @~french
- * @taomoduledescription{LoremIpsum, Lorem Ipsum}
- * <tt>import LoremIpsum</tt> - Génère du texte de remplissage.@n
- *
+ * <tt>import LoremIpsum</tt> - Génère du texte de remplissage.
  * Le module LoremIpsum est utile pour générer du texte de remplissage lorsque
  * vous voulez travailler sur la mise en page d'un document.
  *
